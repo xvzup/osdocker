@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ImageStream
+metadata:
+  labels:
+    app: osdocker-s2i
+  name: osdocker-s2i
+spec:
+  tags:
+  - name: latest
+    annotations:
+      description: Image Stream OSdocker
+      tags: osdocker-s2i
+      version: latest

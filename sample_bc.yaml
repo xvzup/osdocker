@@ -1,0 +1,27 @@
+kind: "BuildConfig"
+apiVersion: "v1"
+metadata:
+  name: "test2345" 
+spec:
+  runPolicy: "Serial"
+  resources:
+    limits:
+      memory: 256Mi
+    requests:
+      memory: 256Mi
+  triggers: 
+  source: 
+    type: "Git"
+    git:
+      uri: "git@github.com:xvzup/osdocker.git"
+    sourceSecret:
+      name: scmsecret
+  strategy: 
+    type: "Docker"
+    dockerStrategy:
+      dockerfilePath: Dockerfile
+  output:
+    to:
+      kind: ImageStreamTag
+      name: osdocker-s2i:latest
+  postCommit: 
