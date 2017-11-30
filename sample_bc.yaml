@@ -9,7 +9,13 @@ spec:
       memory: 256Mi
     requests:
       memory: 256Mi
-  triggers: 
+  triggers:
+    - type: GitHub
+      github:
+        secret: 2dtYSdzSxW1qNqMwWwhv
+    - type: ConfigChange
+    - type: ImageChange
+      imageChange:
   source: 
     type: "Git"
     git:
