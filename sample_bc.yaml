@@ -16,6 +16,9 @@ spec:
     - type: ConfigChange
     - type: ImageChange
       imageChange:
+        from:
+          kind: "ImageStreamTag"
+          name: "osdocker-s2i:latest"
   source: 
     type: "Git"
     git:
